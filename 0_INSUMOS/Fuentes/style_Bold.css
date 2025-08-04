@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Fenomen Sans Bold';
+    src: local('Fenomen Sans Bold'), local('Fenomen-Sans-Bold'),
+        url('FenomenSans-Bold.woff2') format('woff2'),
+        url('FenomenSans-Bold.woff') format('woff'),
+        url('FenomenSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }

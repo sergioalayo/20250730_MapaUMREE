@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Fenomen Sans Semi Bold Italic';
+    src: local('Fenomen Sans Semi Bold Italic'), local('Fenomen-Sans-Semi-Bold-Italic'),
+        url('FenomenSans-SemiBoldItalic.woff2') format('woff2'),
+        url('FenomenSans-SemiBoldItalic.woff') format('woff'),
+        url('FenomenSans-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+  }

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Fenomen Sans Book Italic';
+    src: local('Fenomen Sans Book Italic'), local('Fenomen-Sans-Book-Italic'),
+        url('FenomenSans-BookItalic.woff2') format('woff2'),
+        url('FenomenSans-BookItalic.woff') format('woff'),
+        url('FenomenSans-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }

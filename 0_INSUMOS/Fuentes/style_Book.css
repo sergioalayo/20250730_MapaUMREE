@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Fenomen Sans Book';
+    src: local('Fenomen Sans Book'), local('Fenomen-Sans-Book'),
+        url('FenomenSans-Book.woff2') format('woff2'),
+        url('FenomenSans-Book.woff') format('woff'),
+        url('FenomenSans-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
