@@ -14,11 +14,48 @@
      crossorigin=""></script>
     <!-- Leaflet Grouped Layer Control JS -->
     <script src="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js"></script>
+    <!-- CSS Fonts - Fenomen Sans -->
+    <link rel="stylesheet" href="0_INSUMOS/Fuentes/style_Bold.css">
+    <link rel="stylesheet" href="0_INSUMOS/Fuentes/style_Book.css">
+    <link rel="stylesheet" href="0_INSUMOS/Fuentes/style_BookItalic.css">
+    <link rel="stylesheet" href="0_INSUMOS/Fuentes/style_SemiBold.css">
+    <link rel="stylesheet" href="0_INSUMOS/Fuentes/style_SemiBoldItalic.css">
     <style>
         #mapaid { height: 800px; }
+        h1 {
+            text-align: center;
+            font-family: 'Fenomen Sans Bold', Arial, sans-serif;
+            margin-top: 20px;
+        }
+        /* Estilo para el logo en la parte superior izquierda */
+        .logo-superior-izquierda {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            z-index: 1000;
+        }
+        .logo-superior-izquierda img {
+            height: 60px;
+        }
+        /* Estilo para el logo en la parte superior derecha */
+        .logo-superior-derecha {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .logo-superior-derecha img {
+            height: 60px;
+        }
     </style>
 </head>
 <body>
+    <div class="logo-superior-izquierda">
+        <img src="0_INSUMOS/Gráficos/LOGO_BNP.png" alt="Logo BNP">
+    </div>
+        <div class="logo-superior-derecha">
+        <img src="0_INSUMOS/Gráficos/MINCUL.png" alt="Ministerio de Cultura">
+    </div>
     <h1>Mapa Interactivo BNP</h1>
     <div id="mapaid"></div>
     <script src="mapa.js"></script>

@@ -1,4 +1,4 @@
-var map = L.map('mapaid').setView([-9.19, -75.01], 6); // Centrado en Perú
+var map = L.map('mapaid').setView([-9.19, -75.01], 6);
 
 var osm = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -7,9 +7,9 @@ var osm = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/
 }).addTo(map);
 
 // Estilos para los límites
-var estiloDepto = { color: "#662b1dff", weight: 1.5, fill: false };
-var estiloProv = { color: "#FFC300", weight: 1, fill: false };
-var estiloDist = { color: "#198a1eff", weight: 0.5, fill: false };
+var estiloDepto = { color: "#2b16e4ff", weight: 1.5, fill: false };
+var estiloProvi = { color: "#0d5806ff", weight: 1.5, fill: false };
+var estiloDistr = { color: "#a12e11ff", weight: 1.5, fill: false };
 
 var estiloPIAS = {
   radius: 8,
@@ -72,8 +72,6 @@ var estiloBIB_OTRAS = {
 var capaPIAS = L.layerGroup();
 var capaOTROS = L.layerGroup();
 var capaDepto = L.layerGroup();
-var capaProv = L.layerGroup();
-var capaDist = L.layerGroup();
 var capaBIB_PUBLICA = L.layerGroup();
 var capaBIB_NACIONAL = L.layerGroup();
 var capaBIB_INFANTIL = L.layerGroup();
@@ -84,18 +82,6 @@ fetch('1_RESULTADOS/0_LIMITES/depa_gdf.geojson')
     .then(r => r.json())
     .then(data => {
         L.geoJSON(data, { style: estiloDepto }).addTo(capaDepto);
-    });
-
-fetch('1_RESULTADOS/0_LIMITES/prov_gdf.geojson')
-    .then(r => r.json())
-    .then(data => {
-        L.geoJSON(data, { style: estiloProv }).addTo(capaProv);
-    });
-
-fetch('1_RESULTADOS/0_LIMITES/dist_gdf.geojson')
-    .then(r => r.json())
-    .then(data => {
-        L.geoJSON(data, { style: estiloDist }).addTo(capaDist);
     });
 
 fetch('1_RESULTADOS/1_BNP/dbd_lv_gdf.geojson')
@@ -131,7 +117,7 @@ fetch('1_RESULTADOS/1_BNP/dgab_bi_gdf.geojson')
           punto = L.circleMarker(latlng, estiloBIB_NACIONAL).addTo(capaBIB_NACIONAL);
         } else if (tipo === "BIBLIOTECA INFANTIL") {
           punto = L.circleMarker(latlng, estiloBIB_INFANTIL).addTo(capaBIB_INFANTIL);
-        } else if (tipo === "BIBLIOTECA ESPECIALIZADA") {
+        } else if (tipo === "BIBLIOTECAS ESPECIALIZADAS") {
           punto = L.circleMarker(latlng, estiloBIB_ESPECIALIZADA).addTo(capaBIB_ESPECIALIZADA);
         } else {
           punto = L.circleMarker(latlng, estiloBIB_OTRAS).addTo(capaBIB_OTRAS);
@@ -151,9 +137,7 @@ var groupedOverlays = {
     "🔵 Otras Intervenciones": capaOTROS
   },
   "Límites": {
-    "🟠 Departamentales": capaDepto,
-    "🟡 Provinciales": capaProv,
-    "🟢 Distritales": capaDist
+    "🟠 Departamentales": capaDepto
   },
   "Bibliotecas": {
     "📘 Pública": capaBIB_PUBLICA,
